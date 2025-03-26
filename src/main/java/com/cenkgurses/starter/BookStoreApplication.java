@@ -1,9 +1,13 @@
 package com.cenkgurses.starter;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
+@EnableAutoConfiguration
+@EntityScan(basePackages = {"com.cenkgurses"})
 public class BookStoreApplication {
 
 	public static void main(String[] args) {
