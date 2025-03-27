@@ -14,7 +14,7 @@ public interface IUserController {
 
     public DtoUser getUser(Long id);
 
-    public DtoUser updateUser(DtoUserIU dtoUserIU);
+    public DtoUser updateUser(Long id, DtoUserIU dtoUserIU);
 
     public void deleteUser(Long id);
 }

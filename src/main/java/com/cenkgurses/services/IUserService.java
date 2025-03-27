@@ -15,7 +15,7 @@ public interface IUserService {
 
     public DtoUser getUser(Long id);
 
-    public User updateUser(Long id, User user);
+    public DtoUser updateUser(Long id, DtoUserIU dtoUserIU);
 
     public void deleteUser(Long id);
 

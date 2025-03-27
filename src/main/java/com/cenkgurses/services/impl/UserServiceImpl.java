@@ -66,12 +66,35 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User updateUser(Long id, User user) {
+    public DtoUser updateUser(Long id, DtoUserIU dtoUserIU) {
+
+        Optional<User> optional = userRepository.findById(id);
+
+        if (optional.isPresent()) {
+            User dbUser = optional.get();
+            BeanUtils.copyProperties(dtoUserIU, dbUser);
+
+            User updatedUser = userRepository.save(dbUser);
+
+            DtoUser response = new DtoUser();
+            BeanUtils.copyProperties(updatedUser, response);
+
+            return response;
+        }
+
         return null;
+
     }
 
     @Override
     public void deleteUser(Long id) {
+        Optional<User> optional = userRepository.findById(id);
 
+        if (optional.isEmpty()) {
+            throw new NullPointerException();
+        }
+
+        User dbUser = optional.get();
+        userRepository.delete(dbUser);
     }
 }

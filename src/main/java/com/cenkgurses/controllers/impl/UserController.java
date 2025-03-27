@@ -34,16 +34,16 @@ public class UserController implements IUserController {
         return userService.getUser(id);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     @Override
-    public DtoUser updateUser(@RequestBody DtoUserIU dtoUserIU) {
-        return null;
+    public DtoUser updateUser(@PathVariable Long id, @RequestBody DtoUserIU dtoUserIU) {
+        return userService.updateUser(id, dtoUserIU);
     }
 
     @DeleteMapping("/delete/{id}")
     @Override
     public void deleteUser(@PathVariable Long id) {
-
+        userService.deleteUser(id);
     }
 
 
