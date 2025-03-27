@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -46,6 +47,22 @@ public class UserServiceImpl implements IUserService {
         }
 
         return dtoUserList;
+    }
+
+    @Override
+    public DtoUser getUser(Long id) {
+
+        DtoUser responseUser = new DtoUser();
+        Optional<User> optional = userRepository.findById(id);
+
+        if (optional.isPresent()) {
+            User dbUser = optional.get();
+            BeanUtils.copyProperties(dbUser, responseUser);
+
+            return responseUser;
+        }
+
+        return null;
     }
 
     @Override

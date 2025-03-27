@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 public class DtoUser {
 
     private String firstName;
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -25,5 +26,4 @@ public class DtoUser {
         this.lastName = lastName;
     }
 
-    private String lastName;
 }

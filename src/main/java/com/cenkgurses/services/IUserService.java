@@ -13,6 +13,8 @@ public interface IUserService {
 
     public List<DtoUser> getUsers();
 
+    public DtoUser getUser(Long id);
+
     public User updateUser(Long id, User user);
 
     public void deleteUser(Long id);
