@@ -1,40 +1,18 @@
-package com.cenkgurses.entities;
+package com.cenkgurses.dto.user;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "user")
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class DtoUserIU {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Long id;
-
-    @Column(name = "first_name")
     private String firstName;
-
-    @Column(name = "last_name")
     private String lastName;
-
-    @Column(name = "user_name")
     private String userName;
-
-    @Column(name = "country")
     private String country;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String city;
+    private String address;
 
     public String getFirstName() {
         return firstName;
@@ -83,11 +61,4 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    @Column(name = "city")
-    private String city;
-
-    @Column(name = "address")
-    private String address;
-
 }
