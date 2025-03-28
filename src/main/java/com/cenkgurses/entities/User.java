@@ -27,6 +27,10 @@ public class User {
     @Column(name = "country")
     private String country;
 
+    @OneToOne(mappedBy = "user")
+    @PrimaryKeyJoinColumn
+    private Cart cart;
+
     public Long getId() {
         return id;
     }
