@@ -9,5 +9,5 @@ public interface IBookController {
 
     public List<Book> getBooks();
 
-    public Book getBook();
+    public Book getBook(Long id);
 }

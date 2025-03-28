@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cenkgurses.controllers.IBookController;
 import com.cenkgurses.entities.Book;
 import com.cenkgurses.services.impl.BookServiceImpl;
 
 @RequestMapping("/api/v1/books")
 @RestController
-public class BookController {
+public class BookController implements IBookController {
     
     private BookServiceImpl bookService;
 
