@@ -2,8 +2,6 @@ package com.cenkgurses.services;
 
 import com.cenkgurses.dto.user.DtoUser;
 import com.cenkgurses.dto.user.DtoUserIU;
-import com.cenkgurses.entities.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
