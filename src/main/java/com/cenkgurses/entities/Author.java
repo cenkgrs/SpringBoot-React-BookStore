@@ -18,7 +18,6 @@ public class Author {
     
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
 
     @Column(name = "first_name")
@@ -27,7 +26,7 @@ public class Author {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "id")
     private List<Book> books;
 
 }

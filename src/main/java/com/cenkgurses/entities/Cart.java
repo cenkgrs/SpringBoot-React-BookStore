@@ -4,22 +4,14 @@ import java.util.List;
 
 import com.cenkgurses.generator.CartIdGenerator;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Table(name = "cart")
 @Entity
 public class Cart {
     
     @Id
-    @GeneratedValue(generator = CartIdGenerator.generatorName)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @OneToOne
@@ -27,8 +19,8 @@ public class Cart {
     @JoinColumn(name = "id")
     private User user;
 
-    @OneToMany(mappedBy = "book")
-    private List<Book> items;
+    @OneToMany(mappedBy = "id")
+    private List<Book> books;
 
     @Column(name = "total_price")
     private Double totalPrice;
