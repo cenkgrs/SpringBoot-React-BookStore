@@ -3,6 +3,7 @@ package com.cenkgurses.controllers.impl;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class BookController {
     public List<Book> getBooks() {
 
         return bookService.getBooks();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Book getBook(@PathVariable Long id) {
+        return bookService.getBook(id);
     }
 }

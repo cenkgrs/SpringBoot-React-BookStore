@@ -1,6 +1,7 @@
 package com.cenkgurses.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
 
@@ -43,5 +45,17 @@ public class Book {
     @DateTimeFormat
     @Column(name = "publish_date")
     private Date publishDate;
+
+    @Column(name = "read_count")
+    private Integer readCount;
+
+    @Column(name = "reading_count")
+    private Integer readingCount;
+
+    @Column(name = "will_read_count")
+    private Integer willReadCount;
+
+    @OneToMany(mappedBy = "comment")
+    private List<Comment> comments;
 
 }

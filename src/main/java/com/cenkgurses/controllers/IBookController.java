@@ -8,4 +8,6 @@ import com.cenkgurses.entities.Book;
 public interface IBookController {
 
     public List<Book> getBooks();
+
+    public Book getBook();
 }

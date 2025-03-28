@@ -7,4 +7,6 @@ import com.cenkgurses.entities.Book;
 public interface IBookService {
     
     public List<Book> getBooks();
+
+    public Book getBook(Long id);
 }
